@@ -21,7 +21,7 @@ React and Redux.
 * Creates the view based on your Data
 
 ##What is Redux:
-* Awesome
+* Awesome! Great work done by @gaearon. Checkout the official [documentation](http://redux.js.org/)
 * A predictable state container for JavaScript apps (similar to Flux, Alt, etc.)
   Simple Overview
 * The whole state of your app is stored in an object tree inside a single store.
