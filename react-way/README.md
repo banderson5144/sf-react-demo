@@ -17,3 +17,14 @@ React and Redux.
 * The only way to change the state tree is to emit an action, an object
   describing what happened.
 * To specify how the actions transform the state tree, you write pure reducers.
+
+##Parts of Redux:
+###Actions
+Actions are payloads of information that send data from your application to your
+store. They are the only source of information for the store
+```javascript
+{
+  type: ACTION_TYPE,
+  ...Additional Data
+}
+```
