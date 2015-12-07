@@ -19,6 +19,7 @@ React and Redux.
 * React abstracts away the DOM from you, giving a simpler programming model and
   better performance.
 * Creates the view based on your Data
+* Official [documentation](https://facebook.github.io/react/)
 
 ##What is Redux:
 * Awesome! Great work done by @gaearon. Checkout the official [documentation](http://redux.js.org/)
