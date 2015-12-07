@@ -10,7 +10,9 @@ React and Redux.
 * Zip these two files and add as a Static Resource in Salesforce
   * Alternatively you can do ```npm run deploySR```
   * This will run 7Zip and run a custom node app that will deploy the Zip file
-    to Salesforce. The code for this is in ```deploySF.js```
+    to Salesforce. The code for this is in ```deploySF.js```. This has been
+    tested on a Windows 8.1 64-bit machine with all the proper environment
+    variables set
 
 ##What is React:
 * The “V” in MVC
