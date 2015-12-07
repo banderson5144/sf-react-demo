@@ -25,6 +25,22 @@ store. They are the only source of information for the store
 ```javascript
 {
   type: ACTION_TYPE,
-  ...Additional Data
+  ... Additional Data
+}
+```
+
+###Reducers
+Actions describe the fact that something happened, but don’t specify how the
+application’s state changes in response. This is the job of a reducer.
+```javascript
+function myReducer(state, action) {
+  switch (action.type) {
+    case MY_ACTION:
+      return Object.assign({}, state, {
+        key: value
+      })
+    default:
+      return state
+    }
 }
 ```
