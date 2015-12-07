@@ -44,3 +44,19 @@ function myReducer(state, action) {
     }
 }
 ```
+
+###Store
+* Actions represent the facts about “what happened” and Reducers update the
+  state according to those actions.
+* The Store is the object that brings them together. The store has the following
+responsibilities:
+  * Holds application state;
+  * Allows access to state via getState();
+  * Allows state to be updated via dispatch(action);
+  * Registers listeners via subscribe(listener).
+
+```javascript
+import { createStore } from 'redux'
+import myReducer from './reducers'
+let store = createStore(myReducer)
+```
