@@ -1,0 +1,56 @@
+<apex:page applyBodyTag="false" applyHtmlTag="false" controller="ResponsiveCtrl" docType="html-5.0" showHeader="false" sidebar="false" standardStylesheets="false">
+  <html>
+
+    <!--Import jQuery, you can use a CDN copy as well -->
+    <script src="{!URLFOR($Resource.jq214)}"></script>
+
+    <body>
+			<h1>Accounts</h1>
+        <ul>
+        </ul>
+        <button onclick="saveList();">Upsert list</button>
+        <button onclick="addAcct();">Add Account</button>
+    </body>
+
+		<script>
+      //State of our Account list
+  		var acctList = [];
+
+      //Get accounts when page loads
+  		ResponsiveCtrl.getAccts(function(r, e) {;
+  				updateView(r);
+  		},{escape:false});
+
+      //update the view of our page
+  		function updateView(tempList)
+  		{
+        acctList = tempList;
+
+  			$("ul").empty();
+
+  			for(i=0;i<tempList.length;i++)
+  			{
+  				$("ul").append('<li><input style="width:500px" index="'+i+'" onChange="updateName(this);" value="'+ tempList[i].Name +'"/></li>');
+  			}
+  		}
+
+  		function updateName(el)
+  		{
+  			acctList[$(el).attr('index')].Name = $(el).val();
+  		}
+
+  		function addAcct()
+  		{
+  			acctList.push({Name:""});
+  			updateView(acctList);
+  		}
+
+  		function saveList()
+  		{
+  			ResponsiveCtrl.upsertAccts(acctList, function(r, e) {
+  	      updateView(r);
+  	    },{escape:false});
+  		}
+		</script>
+  </html>
+</apex:page>

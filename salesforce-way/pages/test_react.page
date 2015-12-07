@@ -1,0 +1,8 @@
+<apex:page applyBodyTag="false" applyHtmlTag="false" controller="ResponsiveCtrl" docType="html-5.0" showHeader="false" sidebar="false" standardStylesheets="false">
+  <html>
+    <body>
+      <div id="container"/>
+      <script charset="utf-8" src="{!URLFOR($Resource.myreact,'bundle.js')}" type="text/javascript"></script>
+    </body>
+  </html>
+</apex:page>
