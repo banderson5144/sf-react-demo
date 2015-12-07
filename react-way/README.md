@@ -45,7 +45,7 @@ function myReducer(state, action) {
 }
 ```
 
-###Stores
+###Store
 * Actions represent the facts about “what happened” and Reducers update the
   state according to those actions.
 * The Store is the object that brings them together. The store has the following
