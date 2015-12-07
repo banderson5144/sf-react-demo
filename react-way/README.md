@@ -3,6 +3,15 @@
 We will be using two JavaScript libraries in this demo:
 React and Redux.
 
+#Building solution:
+* Clone this repo
+* cd into react-way
+* run ```webpack``` command, which will produce bundle.js and bundle.js.map
+* Zip these two files and add as a Static Resource in Salesforce
+  * Alternatively you can do ```npm run deploySR```
+  * This will run 7Zip and run a custom node app that will deploy the Zip file
+    to Salesforce. The code for this is in ```deploySF.js```
+
 ##What is React:
 * The “V” in MVC
 * React abstracts away the DOM from you, giving a simpler programming model and
