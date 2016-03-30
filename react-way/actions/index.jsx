@@ -1,4 +1,4 @@
-import {  RECEIVED_ACCTS, UPSERT_ACCTS, ADD_ACCT } from '../constants/index';
+import {  RECEIVED_ACCTS, UPSERT_ACCTS, ADD_ACCT, UPDATE_ACCTS } from '../constants/index';
 
 export function recAccts(accts) {
   return{
@@ -18,7 +18,7 @@ export function qryAccts()
 
 export function upsertAccts(acctStore) {
   return dispatch => {
-    ResponsiveCtrl.upsertAcct(acctStore, function(r, e) {
+    ResponsiveCtrl.upsertAccts(acctStore, function(r, e) {
       dispatch(recAccts(r))
     },{escape:false});
   }
@@ -30,7 +30,7 @@ export function addAcct() {
   }
 }
 
-export function updateNames(name,index) {
+export function updateAccts(name,index) {
   return {
     type: UPDATE_ACCTS,
     acctName:name,

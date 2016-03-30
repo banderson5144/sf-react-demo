@@ -22,7 +22,7 @@ class TableDemo extends React.Component {
   //Perform Upsert Actions
   upsertAccts(e)
   {
-    this.props.dispatch(updateAccts(this.props.accts))
+    this.props.dispatch(upsertAccts(this.props.accts))
   }
 
   //Add new Account to the Array
@@ -34,7 +34,7 @@ class TableDemo extends React.Component {
   //onChange function to handle when a name is changed
   handleChange(ev,index)
   {
-    this.props.dispatch(updateNames(ev.target.value,index));
+    this.props.dispatch(updateAccts(ev.target.value,index));
   }
 
   render () {
