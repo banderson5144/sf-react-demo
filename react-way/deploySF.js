@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var jsforce = require('jsforce');
-var conn = new jsforce.Connection();
+var conn = new jsforce.Connection({loginUrl : 'https://login.salesforce.com'});
 
 var createMetadataPkg = function (res)
 {
