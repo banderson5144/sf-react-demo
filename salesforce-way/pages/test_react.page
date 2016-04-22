@@ -1,4 +1,4 @@
-<apex:page applyBodyTag="false" applyHtmlTag="false" standardController="Account" extensions="ResponsiveCtrl" docType="html-5.0" showHeader="false" sidebar="false" standardStylesheets="false">
+<apex:page applyBodyTag="false" applyHtmlTag="false" controller="ResponsiveCtrl" docType="html-5.0" showHeader="false" sidebar="false" standardStylesheets="false">
   <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
