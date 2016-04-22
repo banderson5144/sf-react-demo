@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 //Import Redux Components
 import { compose, createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-// import { Provider, connect } from 'react-redux';
+import { Provider, connect } from 'react-redux';
 // import { devTools } from 'redux-devtools';
 // import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react';
 

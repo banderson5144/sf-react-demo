@@ -1,6 +1,5 @@
 //Import React
 import React from 'react'
-import Page1Demo from 'page1'
 
 class Wizard2Demo extends React.Component {
   constructor (props)
@@ -36,7 +35,7 @@ class Wizard2Demo extends React.Component {
       newStages[ind].isCurrent=true;
 
       this.setState({stages:newStages,currentStage:ind});
-    }this.props.accts this.props.dispatch
+    }
   }
 
   skipTo(ev,ind)

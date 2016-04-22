@@ -1,5 +1,6 @@
 //Import React
 import React from 'react'
+import LookupComp from './lookupComp'
 
 class ModalDemo extends React.Component {
   constructor (props)
@@ -98,71 +99,7 @@ class ModalDemo extends React.Component {
                 onClick={this.modalOpenFunc}>Pop Modal</button>
         <button className="slds-button slds-button--brand"
                 onClick={this.startSpinner}>Start Spinner</button>
-        <div className={"slds-lookup"+(this.state.selVal!=null?" slds-has-selection":"")} data-select="single" data-scope="single" data-typeahead={this.state.selVal!=null?"false":"true"}>
-          <div className="slds-form-element">
-            <label className="slds-form-element__label" htmlFor="lookup">Accounts</label>
-            <div className="slds-form-element__control slds-input-has-icon slds-input-has-icon--right">
-              <svg aria-hidden="true" className={"slds-input__icon slds-icon-text-default"+(this.state.selectedVal!=''?" slds-hide":" slds-show")}>
-                <use xlinkHref={rootResUrl + "/assets/icons/utility-sprite/svg/symbols.svg#search"}></use>
-              </svg>
-              <div className={"slds-pill_container"+(this.state.selectedVal!=''?" slds-show":" slds-hide")}>
-                <a className="slds-pill">
-                  <svg aria-hidden="true" className="slds-icon slds-icon-standard-account slds-pill__icon">
-                    <use xlinkHref={rootResUrl + "/assets/icons/standard-sprite/svg/symbols.svg#account"}></use>
-                  </svg>
-                  <span className="slds-pill__label">{this.state.someVal}</span>
-                  <button className="slds-button slds-button--icon-bare slds-pill__remove" onClick={this.removeSel}>
-                    <svg aria-hidden="true" className="slds-button__icon">
-                      <use xlinkHref={rootResUrl + "/assets/icons/utility-sprite/svg/symbols.svg#close"}></use>
-                    </svg>
-                    <span className="slds-assistive-text">Remove</span>
-                  </button>
-                </a>
-              </div>
-              <input id="lookup"
-                     className={"slds-input"+(this.state.selectedVal?" slds-hide":" slds-show")}
-                     type="text"
-                     aria-autocomplete="list"
-                     role="combobox"
-                     aria-expanded="true"
-                     aria-activedescendant=""
-                     value={this.state.someVal}
-                     onChange={this.handleChange}
-                     onBlur={this.blurFunc}
-                     onFocus={this.focusFunc}/>
-            </div>
-          </div>
-          { (this.state.someVal != '' && !this.state.selectedVal && this.state.isFocused) &&
-            <div className="slds-lookup__menu" role="listbox">
-              <div className="slds-lookup__item">
-                <button className="slds-button">
-                  <svg aria-hidden="true" className="slds-icon slds-icon-text-default slds-icon--small">
-                    <use xlinkHref={rootResUrl + "/assets/icons/utility-sprite/svg/symbols.svg#search"}></use>
-                  </svg>{'"'+this.state.someVal+'" in Accounts'}</button>
-              </div>
-              <ul className="slds-lookup__list" role="presentation">
-                {
-                  this.state.lkupList.length > 0 &&
-                  this.state.lkupList.map((v,i)=>
-                  {
-                    return <li key={i} className="slds-lookup__item" onClick={() => this.selVal(v.rName)}>
-                              <span id="s01" role="option">
-                                <svg aria-hidden="true" className="slds-icon slds-icon-standard-account slds-icon--small">
-                                  <use xlinkHref={rootResUrl + "/assets/icons/standard-sprite/svg/symbols.svg#account"}></use>
-                                </svg>{v.rName}</span>
-                            </li>
-                  })
-                }
-              </ul>
-              <div className="slds-lookup__item">
-                <button className="slds-button" onClick={this.modalOpenFunc}>
-                  <svg aria-hidden="true" className="slds-icon slds-icon-text-default slds-icon--small">
-                    <use xlinkHref={rootResUrl + "/assets/icons/utility-sprite/svg/symbols.svg#add"}></use>
-                  </svg>Add Account</button>
-              </div>
-            </div>
-          }
-        </div>
+        <LookupComp/>
         <div className="slds-spinner_container" style={{display:(this.state.spin?'':'none')}}>
           <div className="slds-spinner--brand slds-spinner slds-spinner--large" aria-hidden="false" role="alert">
             <div className="slds-spinner__dot-a"></div>
