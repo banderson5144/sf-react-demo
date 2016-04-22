@@ -1,8 +1,17 @@
-<apex:page applyBodyTag="false" applyHtmlTag="false" controller="ResponsiveCtrl" docType="html-5.0" showHeader="false" sidebar="false" standardStylesheets="false">
+<apex:page applyBodyTag="false" applyHtmlTag="false" standardController="Account" extensions="ResponsiveCtrl" docType="html-5.0" showHeader="false" sidebar="false" standardStylesheets="false">
   <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.SLDS102,'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+  </head>
+  <style>
+  </style>
     <body>
-      <div id="container"/>
-      <script charset="utf-8" src="{!URLFOR($Resource.myreact,'bundle.js')}" type="text/javascript"></script>
+      <div id="container" class="slds"/>
     </body>
+    <script type="text/javascript">
+      var rootResUrl = '{!URLFOR($Resource.SLDS102)}';
+    </script>
+    <script charset="utf-8" src="{!URLFOR($Resource.myreact,'bundle.js')}" type="text/javascript"></script>
   </html>
 </apex:page>
